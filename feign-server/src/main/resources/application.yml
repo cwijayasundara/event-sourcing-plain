@@ -1,0 +1,34 @@
+
+spring:
+  application:
+    name: tradeservice
+
+  zipkin:
+    base-url: http://zipkin/
+
+  sleuth:
+    sampler:
+      probability: 1.0
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        trade-out:
+          destination: spring-cloud-stream-twitter
+          contentType: application/json
+        trade-in:
+          destination: spring-cloud-stream-twitter
+          contentType: application/json
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+        

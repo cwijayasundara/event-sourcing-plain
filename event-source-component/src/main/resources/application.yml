@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: event-source-component
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        audit-out:
+          destination: audit-out
+          contentType: application/json
