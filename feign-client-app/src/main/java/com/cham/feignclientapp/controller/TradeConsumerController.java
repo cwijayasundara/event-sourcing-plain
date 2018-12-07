@@ -32,11 +32,8 @@ public class TradeConsumerController {
 
     private static Logger log = LoggerFactory.getLogger(TradeConsumerController.class);
 
+    @Autowired
     private AuditMessageProducer auditMessageProducer;
-
-    public TradeConsumerController(){
-        auditMessageProducer = new AuditMessageProducer();
-    }
 
     @GetMapping(value = "/api/feign/trades", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
