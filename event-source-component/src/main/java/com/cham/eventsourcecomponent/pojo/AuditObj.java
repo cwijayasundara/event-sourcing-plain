@@ -3,16 +3,18 @@ package com.cham.eventsourcecomponent.pojo;
 public class AuditObj {
 
     private String eventId;
-    private String sourceSystem;
-    private String receivedDateTime;
+    private String eventSource;
+    private String eventDateTime;
     private String eventData;
+
+    public AuditObj(){}
 
     @Override
     public String toString() {
         return "AuditObj{" +
                 "eventId='" + eventId + '\'' +
-                ", sourceSystem='" + sourceSystem + '\'' +
-                ", receivedDateTime='" + receivedDateTime + '\'' +
+                ", eventSource='" + eventSource + '\'' +
+                ", eventDateTime='" + eventDateTime + '\'' +
                 ", eventData='" + eventData + '\'' +
                 '}';
     }
@@ -25,20 +27,20 @@ public class AuditObj {
         this.eventId = eventId;
     }
 
-    public String getSourceSystem() {
-        return sourceSystem;
+    public String getEventSource() {
+        return eventSource;
     }
 
-    public void setSourceSystem(String sourceSystem) {
-        this.sourceSystem = sourceSystem;
+    public void setEventSource(String eventSource) {
+        this.eventSource = eventSource;
     }
 
-    public String getReceivedDateTime() {
-        return receivedDateTime;
+    public String getEventDateTime() {
+        return eventDateTime;
     }
 
-    public void setReceivedDateTime(String receivedDateTime) {
-        this.receivedDateTime = receivedDateTime;
+    public void setEventDateTime(String eventDateTime) {
+        this.eventDateTime = eventDateTime;
     }
 
     public String getEventData() {
@@ -51,11 +53,9 @@ public class AuditObj {
 
     public AuditObj(String eventId, String sourceSystem, String receivedDateTime, String eventData) {
         this.eventId = eventId;
-        this.sourceSystem = sourceSystem;
-        this.receivedDateTime = receivedDateTime;
+        this.eventSource = sourceSystem;
+        this.eventDateTime = receivedDateTime;
         this.eventData = eventData;
     }
-
-    public AuditObj(){}
 
 }
