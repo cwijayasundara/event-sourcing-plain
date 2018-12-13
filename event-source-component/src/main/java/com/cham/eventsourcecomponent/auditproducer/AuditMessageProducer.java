@@ -34,7 +34,6 @@ public class AuditMessageProducer {
     private static Logger log = LoggerFactory.getLogger(AuditMessageProducer.class);
 
     public void publishAuditMessages(final String event) {
-        log.info("Publishing the audit event..");
         AuditObj auditObj = getAuditObj(event);
         log.info("Sending audit message to kafka topic " + auditObj.toString());
         MessageChannel messageChannel = auditStream.outboundAuditMessages();
