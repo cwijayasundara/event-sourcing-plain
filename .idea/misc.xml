@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/zipkin-server/pom.xml" />
         <option value="$PROJECT_DIR$/../../Spring-Cloud-Open-Feign/event-source-common/pom.xml" />
         <option value="$PROJECT_DIR$/event-source-component/pom.xml" />
+        <option value="$PROJECT_DIR$/audit-consumer/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

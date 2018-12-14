@@ -2,14 +2,11 @@
 spring:
   application:
     name: tradeservice
-
   zipkin:
     base-url: http://zipkin/
-
   sleuth:
     sampler:
       probability: 1.0
-
   cloud:
     stream:
       kafka:
@@ -22,7 +19,6 @@ spring:
         trade-in:
           destination: spring-cloud-stream-twitter
           contentType: application/json
-
 eureka:
   instance:
     preferIpAddress: true

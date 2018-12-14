@@ -3,7 +3,9 @@ package com.cham.feignserver.Aspect;
 import com.cham.eventsourcecomponent.auditproducer.AuditMessageProducer;
 import com.google.gson.Gson;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,11 +36,22 @@ public class AuditAspect {
         publishAuditMessage(joinPoint);
     }
 
+    @Around("execution(* com..*TradeServiceController.*(..))")
+    private void auditTradeController(ProceedingJoinPoint proceedingJoinPoint) throws Throwable{
+        logger.info("Inside AuditAspect.auditTradeController()");
+        Object retval = proceedingJoinPoint.proceed();
+        publishAuditMessageFromProceed(retval);
+    }
+
+    private void publishAuditMessageFromProceed(Object retval) {
+        String retValStr = gson.toJson(retval);
+        auditMessageProducer.publishAuditMessages(retValStr);
+    }
+
     private void publishAuditMessage(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
         Object retVal = args[0];
-        String tradeStr = gson.toJson(retVal);
-        auditMessageProducer.publishAuditMessages(tradeStr);
+        publishAuditMessageFromProceed(retVal);
     }
 
 }

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Cloud-Open-Feign.iml" filepath="$PROJECT_DIR$/.idea/Spring-Cloud-Open-Feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/audit-consumer/audit-consumer.iml" filepath="$PROJECT_DIR$/audit-consumer/audit-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/event-source-component/event-source-component.iml" filepath="$PROJECT_DIR$/event-source-component/event-source-component.iml" />
       <module fileurl="file://$PROJECT_DIR$/feign-client-app/feign-client-app.iml" filepath="$PROJECT_DIR$/feign-client-app/feign-client-app.iml" />
