@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a912e1-ff95-4b28-80b4-23d51fa15f10" name="Default" comment="added a message consumer">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceHazelcastImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/actors/CassandraRepositoryActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/config/CassandraConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/controller/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/data/keyspaces.cql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/data/tables.cql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/AuditCassandraRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/consumer/KafkaAuditConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/consumer/KafkaAuditConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceHazelcastImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-source-component/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/event-source-component/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/auditproducer/AuditMessageProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/auditproducer/AuditMessageProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/pojo/AuditObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/pojo/AuditObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-server/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/eureka/target/" />
@@ -43,20 +52,71 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/consumer/KafkaAuditConsumer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/AuditCassandraRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/controller/EventController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#679#680#0" expanded="true" />
+                <element signature="e#736#737#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/AuditConsumerApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TradeConsumerController</find>
-      <find>spring-cloud-sleuth-zipkin</find>
       <find>spring-cloud-starter-zipkin</find>
       <find>3924745921133384346</find>
       <find>c9888061012e6d66</find>
@@ -83,7 +143,14 @@
       <find>Returned value from the controller is</find>
       <find>Sending audit message to kafka topic</find>
       <find>audit-out</find>
+      <find>basePackages</find>
+      <find>UUID</find>
+      <find>getAuditObj</find>
+      <find>auditobj</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -96,14 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/zipkin-server/src/main/java/com/cham/zipkinserver/ZipkinServerApplication.java" />
-        <option value="$PROJECT_DIR$/zipkin-server/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/zipkin-server/pom.xml" />
-        <option value="$PROJECT_DIR$/READ.md" />
-        <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/stream/TweetStreams.java" />
-        <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/producer/KafkaTweetProducer.java" />
-        <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/consumer/KafkaTweetConsumer.java" />
-        <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/domain/Tweet.java" />
         <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/domain/Trade.java" />
         <option value="$PROJECT_DIR$/feign-client-app/src/main/java/com/cham/feignclientapp/pojo/AuditObj.java" />
         <option value="$PROJECT_DIR$/feign-client-app/src/main/java/com/cham/feignclientapp/stream/TradeStream.java" />
@@ -125,28 +184,36 @@
         <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/FeignServerApplication.java" />
         <option value="$PROJECT_DIR$/feign-client-app/src/main/java/com/cham/feignclientapp/controller/TradeConsumerController.java" />
         <option value="$PROJECT_DIR$/feign-client-app/pom.xml" />
-        <option value="$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/pojo/AuditObj.java" />
-        <option value="$PROJECT_DIR$/event-source-component/pom.xml" />
         <option value="$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/Aspect/AuditAspect.java" />
         <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/producer/KafkaTradeProducer.java" />
-        <option value="$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/auditproducer/AuditMessageProducer.java" />
         <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/consumer/KafkaTradeConsumer.java" />
         <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/Aspect/AuditAspect.java" />
         <option value="$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/controller/TradeServiceController.java" />
         <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/stream/TradeStream.java" />
-        <option value="$PROJECT_DIR$/feign-server/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/event-source-component/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/audit-consumer/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/stream/AuditStream.java" />
         <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/AuditConsumerApplication.java" />
         <option value="$PROJECT_DIR$/feign-client-app/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/audit-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/feign-server/pom.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceImpl.java" />
         <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceRepository.java" />
-        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/consumer/KafkaAuditConsumer.java" />
         <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceHazelcastImpl.java" />
+        <option value="$PROJECT_DIR$/feign-server/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/actors/CassandraRepositoryActor.java" />
+        <option value="$PROJECT_DIR$/audit-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/config/CassandraConfig.java" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/consumer/KafkaAuditConsumer.java" />
+        <option value="$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/auditproducer/AuditMessageProducer.java" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/data/keyspaces.cql" />
+        <option value="$PROJECT_DIR$/event-source-component/pom.xml" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/pojo/AuditObj.java" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/data/tables.cql" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/controller/AuditController.java" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/AuditCassandraRepository.java" />
+        <option value="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/controller/EventController.java" />
       </list>
     </option>
   </component>
@@ -169,9 +236,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="25" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="827" />
+    <option name="height" value="830" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -182,6 +249,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,11 +257,83 @@
               <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
               <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
+              <item name="audit-consumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
+              <item name="audit-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
+              <item name="audit-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
+              <item name="audit-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
+              <item name="audit-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auditconsumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
+              <item name="audit-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auditconsumer" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
+              <item name="audit-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auditconsumer" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
+              <item name="audit-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auditconsumer" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Spring-Cloud-Open-Feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spring-Cloud-Open-Feign" type="462c0819:PsiDirectoryNode" />
+              <item name="audit-consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -205,7 +345,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544803479764" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545065146250" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
@@ -218,13 +358,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.cham.auditconsumer" />
       <recent name="com.cham.feignserver" />
       <recent name="com.cham.feignclientapp" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.cham.auditconsumer.consumer" />
@@ -233,7 +373,8 @@
       <recent name="com.cham.eventsourcecomponent.pojo" />
       <recent name="com.cham.eventsourcecomponent.stream" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/data" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -578,7 +719,9 @@
       <workItem from="1544606964474" duration="21243000" />
       <workItem from="1544689838841" duration="15556000" />
       <workItem from="1544779717547" duration="7630000" />
-      <workItem from="1544797637343" duration="4474000" />
+      <workItem from="1544797637343" duration="5958000" />
+      <workItem from="1545043342239" duration="2298000" />
+      <workItem from="1545049193197" duration="12446000" />
     </task>
     <task id="LOCAL-00001" summary="renamed">
       <created>1541511417956</created>
@@ -636,17 +779,24 @@
       <option name="project" value="LOCAL" />
       <updated>1544799150515</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added a message consumer">
+      <created>1544804111492</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1544804111492</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173801000" />
+    <option name="totallyTimeSpent" value="190029000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1440" height="827" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="830" extended-state="0" />
     <layout>
       <window_info id="Web" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25751072" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.26466382" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -656,7 +806,7 @@
       <window_info anchor="bottom" id="Spring" order="0" weight="0.32867134" />
       <window_info anchor="bottom" id="Java Enterprise" order="1" weight="0.32867134" />
       <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.3286517" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.3272727" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3286517" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.46013987" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
@@ -664,13 +814,13 @@
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Graph Database Console" order="10" weight="0.32867134" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.66432583" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.66293705" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5007153" side_tool="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="15" visible="true" weight="0.29213482" />
-      <window_info anchor="bottom" id="Build" order="16" sideWeight="0.49928468" weight="0.2963483" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.63623595" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="15" visible="true" weight="0.29090908" />
+      <window_info anchor="bottom" id="Build" order="16" sideWeight="0.49928468" weight="0.2937063" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.43496504" />
       <window_info anchor="right" id="Bean Validation" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24964234" />
@@ -701,45 +851,31 @@
     <MESSAGE value="added a message consumer" />
     <option name="LAST_COMMIT_MESSAGE" value="added a message consumer" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/AuditCassandraRepository.java</url>
+          <line>11</line>
+          <properties class="com.cham.auditconsumer.repository.AuditCassandraRepository" method="insert">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/consumer/KafkaAuditConsumer.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Spring-Cloud-Open-Feign/event-source-common/src/main/java/com/cham/eventsourcecommon/pojo/AuditObj.java" />
-    <entry file="file://$PROJECT_DIR$/../../Spring-Cloud-Open-Feign/event-source-common/src/main/java/com/cham/eventsourcecommon/stream/AuditStream.java" />
-    <entry file="file://$PROJECT_DIR$/../../Spring-Cloud-Open-Feign/event-source-common/src/main/java/com/cham/eventsourcecommon/auditproducer/AuditMessageProducer.java" />
-    <entry file="file://$PROJECT_DIR$/../../Spring-Cloud-Open-Feign/event-source-common/src/main/resources/application.yml" />
-    <entry file="file://$PROJECT_DIR$/event-source-common/src/main/resources/application.yml" />
-    <entry file="file://$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/pojo/stream/AuditStream.java" />
-    <entry file="file://$PROJECT_DIR$/feign-client-app/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event-source-component/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/config/AppConfig.java" />
-    <entry file="file://$PROJECT_DIR$/feign-client-app/src/main/java/com/cham/feignclientapp/controller/AppConfig.java" />
-    <entry file="file://$PROJECT_DIR$/feign-client-app/src/main/java/com/cham/feignclientapp/FeignClientAppApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eureka/src/main/java/com/cham/eureka/EurekaApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -802,13 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/pojo/AuditObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.10.RELEASE/spring-aop-5.0.10.RELEASE.jar!/org/springframework/aop/aspectj/MethodInvocationProceedingJoinPoint.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -841,16 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/producer/KafkaTradeProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -911,25 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feign-server/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/auditproducer/AuditMessageProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="37" column="54" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1917#1918#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/stream/AuditStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -947,20 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/event-source-component/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="21" column="46" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/stream/AuditStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/FeignServerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -969,27 +1055,6 @@
             <element signature="e#671#672#0" expanded="true" />
             <element signature="e#735#736#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/feign-client-app/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/audit-consumer/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="57" column="49" lean-forward="true" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1020,38 +1085,231 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/AuditConsumerApplication.java">
+    <entry file="file://$PROJECT_DIR$/feign-client-app/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state>
+          <caret selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feign-server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feign-client-app/src/main/java/com/cham/feignclientapp/FeignClientAppApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/typesafe/akka/akka-actor_2.11/2.5.19/akka-actor_2.11-2.5.19.jar!/akka/actor/UntypedActor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceHazelcastImpl.java">
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/EventSourceRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+        <state relative-caret-position="168">
+          <caret line="14" column="71" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="46" column="51" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/actors/CassandraRepositoryActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.0.11.RELEASE/spring-data-cassandra-2.0.11.RELEASE.jar!/org/springframework/data/cassandra/repository/ReactiveCassandraRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/stream/AuditStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feign-server/src/main/java/com/cham/feignserver/producer/KafkaTradeProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/config/CassandraConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/auditproducer/AuditMessageProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="47" column="56" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1994#1995#0" expanded="true" />
+            <element signature="e#2063#2064#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/data/keyspaces.cql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="64" selection-start-column="59" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-cassandra/2.1.3.RELEASE/spring-data-cassandra-2.1.3.RELEASE.jar!/org/springframework/data/cassandra/core/mapping/Column.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/event-source-component/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="63" column="45" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/event-source-component/src/main/java/com/cham/eventsourcecomponent/pojo/AuditObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1172#1173#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1422#1423#0" expanded="true" />
+            <element signature="e#1458#1459#0" expanded="true" />
+            <element signature="e#1516#1517#0" expanded="true" />
+            <element signature="e#1566#1567#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
+            <element signature="e#1684#1685#0" expanded="true" />
+            <element signature="e#1726#1727#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/data/tables.cql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.11.RELEASE/spring-data-commons-2.0.11.RELEASE.jar!/org/springframework/data/repository/reactive/ReactiveCrudRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/consumer/KafkaAuditConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        <state relative-caret-position="312">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/AuditConsumerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/controller/EventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit-consumer/src/main/java/com/cham/auditconsumer/repository/AuditCassandraRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

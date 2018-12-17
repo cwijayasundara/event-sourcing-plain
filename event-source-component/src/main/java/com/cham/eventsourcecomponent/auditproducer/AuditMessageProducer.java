@@ -16,6 +16,7 @@ import org.springframework.util.MimeTypeUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 @Service
 public class AuditMessageProducer {
@@ -44,12 +45,7 @@ public class AuditMessageProducer {
     }
 
     private AuditObj getAuditObj(String event) {
-        AuditObj auditObj = new AuditObj();
-        auditObj.setEventId(getTraceId());
-        auditObj.setEventSource(appName);
-        auditObj.setEventDateTime(dtf.format(LocalDateTime.now()));
-        auditObj.setEventData(event);
-        return auditObj;
+        return new AuditObj(UUID.randomUUID().toString(),getTraceId(),appName,dtf.format(LocalDateTime.now()),event);
     }
 
     private String getTraceId(){
