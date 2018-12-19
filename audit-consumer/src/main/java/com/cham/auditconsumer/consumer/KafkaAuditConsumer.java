@@ -11,6 +11,11 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
+import java.time.Duration;
+import java.time.Instant;
+
+import static java.time.temporal.ChronoUnit.NANOS;
+
 @Component
 public class KafkaAuditConsumer {
 
@@ -22,6 +27,10 @@ public class KafkaAuditConsumer {
     @StreamListener(AuditStream.INPUT)
     public void consumeAudits(@Payload AuditObj auditObj) {
         log.info("Received Audit .." + auditObj);
+        Instant start = Instant.now();
         auditCassandraRepository.insert(List.of(auditObj)).subscribe();
+        Instant end = Instant.now();
+        Duration duration = Duration.between(start,end);
+        log.info("Time taken to publish event to Cassandra in milli-seconds is " + duration.get(NANOS)/1000000);
     }
 }
