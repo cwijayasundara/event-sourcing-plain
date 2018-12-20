@@ -1,36 +1,34 @@
 package com.cham.auditconsumer.consumer;
 
-import com.cham.auditconsumer.repository.AuditCassandraRepository;
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
+import com.cham.auditconsumer.config.SpringExtension;
 import com.cham.auditconsumer.stream.AuditStream;
 import com.cham.eventsourcecomponent.pojo.AuditObj;
-import com.sun.tools.javac.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-import java.time.Duration;
-import java.time.Instant;
-
-import static java.time.temporal.ChronoUnit.NANOS;
-
 @Component
+@Configuration("AppConfiguration.class")
 public class KafkaAuditConsumer {
 
     private static Logger log = LoggerFactory.getLogger(KafkaAuditConsumer.class);
 
     @Autowired
-    private AuditCassandraRepository auditCassandraRepository;
+    private ActorSystem system;
 
     @StreamListener(AuditStream.INPUT)
     public void consumeAudits(@Payload AuditObj auditObj) {
         log.info("Received Audit .." + auditObj);
-        Instant start = Instant.now();
-        auditCassandraRepository.insert(List.of(auditObj)).subscribe();
-        Instant end = Instant.now();
-        Duration duration = Duration.between(start,end);
-        log.info("Time taken to publish event to Cassandra in milli-seconds is " + duration.get(NANOS)/1000000);
+        getActorRef().tell(auditObj,null);
+    }
+
+    private ActorRef getActorRef(){
+        return system.actorOf(SpringExtension.SPRING_EXTENSION.get(system).props("eventSourceActor"));
     }
 }
