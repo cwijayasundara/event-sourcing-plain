@@ -38,7 +38,7 @@ public class AuditMessageProducer {
         AuditObj auditObj = getAuditObj(event);
         log.info("Sending audit message to kafka topic " + auditObj.toString());
         MessageChannel messageChannel = auditStream.outboundAuditMessages();
-        messageChannel.send(MessageBuilder
+            messageChannel.send(MessageBuilder
                     .withPayload(auditObj)
                     .setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON)
                     .build());
