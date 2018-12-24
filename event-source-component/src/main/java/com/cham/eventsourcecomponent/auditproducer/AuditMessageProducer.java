@@ -30,7 +30,7 @@ public class AuditMessageProducer {
     @Value("${spring.application.name}")
     private String appName;
 
-    private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss:SSS");
 
     private static Logger log = LoggerFactory.getLogger(AuditMessageProducer.class);
 
