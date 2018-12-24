@@ -3,13 +3,13 @@ package com.cham.auditconsumer.actors;
 import akka.actor.AbstractActor;
 import com.cham.auditconsumer.repository.AuditCassandraRepository;
 import com.cham.eventsourcecomponent.pojo.AuditObj;
-import com.sun.tools.javac.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import reactor.core.publisher.Flux;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -33,7 +33,7 @@ public class EventSourceActor extends AbstractActor {
 
             try {
                 Instant start = Instant.now();
-                auditCassandraRepository.insert(List.of(r)).subscribe();
+                auditCassandraRepository.insert(Flux.just(r)).subscribe();
                 Instant end = Instant.now();
                 Duration duration = Duration.between(start,end);
                 log.info("Time taken to publish event to Cassandra in milli-seconds is " + duration.get(NANOS)/1000000);
