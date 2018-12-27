@@ -1,0 +1,7 @@
+
+spring:
+      data:
+            cassandra:
+                  contact-points: 127.0.0.1
+                  port: 9142
+                  keyspace-name: event_source_keyspace
